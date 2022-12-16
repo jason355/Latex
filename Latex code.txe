@@ -1,0 +1,59 @@
+Latex instruction:
+
+imange
+
+1.  
+	\documentclass{article}        將此文建設為 "article"
+	\usepackage{graphicx}          宣告使用 "graphicx" 程式庫
+	\graphicspath{ {./images/} }   
+		照片位置 "./" 為此檔案位置    
+		"images" **此檔案位置內的資料夾名稱，如果與此程式同一資料夾則不需此行**
+
+	=================================   每個檔案開頭需宣告此文件種類，如需使用程式庫需在此宣告
+	\begin{document}	文件開始
+
+	\includegraphics{universe}  顯示名為 "universe" 之圖片	
+	\end{document} 文件結束
+
+
+2.  此為上Code 1 之延伸用法
+    \includegraphics[scale, width, height, angle]{filename}   %不一定要全放 ex.[scale=2, angle=5]
+											%把 Code 1 之\includegraphics 換成此行即可
+		%scale= //整體大小     
+		%width= //寬       
+		%height= // 高            
+		%angle= //角度
+
+3. 	自訂位置
+	\begin{figure}[h]     %注意寫法  figure 就寫figure
+	\includegraphics[width=8cm]{Plot}
+	\end{figure}
+
+		h here
+		t top
+		b bottom
+		P Put on a special page for floats only
+		! determining "good" float poositions
+		H 精準位置
+
+4. 	圖在字旁邊
+	\begin{wrapfigure}{r}{0.25\textwidth}  % r means right so l means left 0.25means 
+	\centering							   % 圖片以自己為中心置中
+	\includegraphics[see Code 2]{images}
+	\end{wrapfigure}
+				
+	  % 單位
+	  pt    一個點，大約 0.3515mm
+	  mm	a millimetre
+	  cm	a centimetre
+	  in	an inch about 2.845 pt
+	  ex	當前字體 "x" 高度   
+	  em	當前字體 "M" 高度
+	  \columnsep	distance between columns
+	  \columnwidth	width of the column
+	  \linewidth	width of the line in the current environment
+	  \paperwidth	width of the page	% same as paperwidth
+	  \paperheight	height of the page  % 整張A4的高度
+	  \textwidth	width of the text	% 頁面(可輸入文字部分) 之寬度
+	  \textheight	height of the text  % same as textwidth
+	  \unitlength	units of length in the picture environment.
